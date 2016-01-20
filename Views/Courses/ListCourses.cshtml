@@ -46,19 +46,19 @@
 </div>
 
 @section Scripts {
-    @*<script type="text/javascript" src="~/Scripts/sabio.js"></script>*@
-    <script type="text/javascript" src="~/Scripts/Sabio.Services.Courses.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/corbulo.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/Corbulo.Services.Courses.js"></script>
     <script type="text/javascript">
 
-        sabio.page.startUp = function ()
+        corbulo.page.startUp = function ()
         {
             console.log("startUp is firing");
 
-            sabio.services.courses.getAll(sabio.page.ajaxSuccess, sabio.page.ajaxError);
+            corbulo.services.courses.getAll(corbulo.page.ajaxSuccess, corbulo.page.ajaxError);
 
         }
 
-        sabio.page.ajaxSuccess = function (data, status, xhr) 
+        corbulo.page.ajaxSuccess = function (data, status, xhr) 
         {
             if (!data) 
             {
@@ -75,13 +75,13 @@
                 courseData.start = data.items[i].start;
                 courseData.courseLength = data.items[i].courseLength;
                 courseData.length = data.items[i].length;
-                sabio.page.addCourseToDom(courseData);
+                corbulo.page.addCourseToDom(courseData);
 
             }
 
         }
 
-        sabio.page.addCourseToDom = function (courseData) 
+        corbulo.page.addCourseToDom = function (courseData) 
         {
             
             var newCourse = $($("#courseTemplate").html()).clone();
@@ -91,7 +91,7 @@
             var edit = "/courses/" + courseData.id + "/edit";
             var cDetails = "/courses/" + courseData.id + "/details";
 
-            //var course = sabio.page.getCourse(data);
+            //var course = corbulo.page.getCourse(data);
             newCourse.find('#courseName').html(courseData.courseName);
             newCourse.find('#courseDescription').html(courseData.description);
             newCourse.find('#courseStart').html(start);
@@ -109,7 +109,7 @@
 
         }
 
-        sabio.page.ajaxError = function (jqXHR, textStatus, errorThrown)
+        corbulo.page.ajaxError = function (jqXHR, textStatus, errorThrown)
         {
             
             $("#msgWindow").addClass("alert-danger");
@@ -117,7 +117,7 @@
 
         }
 
-        sabio.page.getClone = function () 
+        corbulo.page.getClone = function () 
         {
 
             return $($("#courseTemplate").html()).clone();
