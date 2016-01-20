@@ -138,20 +138,20 @@
 
 @section Scripts {
 
-    <script src="~/Scripts/Sabio.Services.Courses.js"></script>
+    <script src="~/Scripts/Corbulo.Services.Courses.js"></script>
     <script type="text/javascript">
 
-        sabio.page.startUp = function () {
-            sabio.page.courseDetailsController = sabio.ng.getControllerInstance($("#detailsCtrler"));
+        corbulo.page.startUp = function () {
+            corbulo.page.courseDetailsController = corbulo.ng.getControllerInstance($("#detailsCtrler"));
         }
 
-        sabio.services.courseDetailsFactory = function ($baseService) {
-            var aSabioServiceObject = sabio.services.courses;
-            var newService = $baseService.merge(true, {}, aSabioServiceObject, $baseService);
+        corbulo.services.courseDetailsFactory = function ($baseService) {
+            var aCorbuloServiceObject = corbulo.services.courses;
+            var newService = $baseService.merge(true, {}, aCorbuloServiceObject, $baseService);
             return newService;
         }
 
-        sabio.page.courseDetailsControllerFactory = function ($scope, $baseController, $courseDetailsService, $timeout) {
+        corbulo.page.courseDetailsControllerFactory = function ($scope, $baseController, $courseDetailsService, $timeout) {
 
             var vm = this;
 
@@ -221,15 +221,15 @@
         }
 
 
-        sabio.ng.addService(sabio.ng.app.module
+        corbulo.ng.addService(corbulo.ng.app.module
         , "$courseDetailsService"
         , ["$baseService"]
-        , sabio.services.courseDetailsFactory);
+        , corbulo.services.courseDetailsFactory);
 
-        sabio.ng.addController(sabio.ng.app.module
+        corbulo.ng.addController(corbulo.ng.app.module
            , "courseDetailsController"
            , ['$scope', '$baseController', '$courseDetailsService', '$timeout']
-           , sabio.page.courseDetailsControllerFactory);
+           , corbulo.page.courseDetailsControllerFactory);
 
 
     </script>
