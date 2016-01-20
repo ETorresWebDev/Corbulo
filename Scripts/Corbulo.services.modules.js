@@ -1,10 +1,10 @@
 ﻿//SEPARATION OF CONCERNS
 
-if (!sabio.services.modules) {
-    sabio.services.modules = {};
+if (!corbulo.services.modules) {
+    corbulo.services.modules = {};
 }
 
-sabio.services.modules.getSectionModules = function (sectionId, onSuccess, onError) {
+corbulo.services.modules.getSectionModules = function (sectionId, onSuccess, onError) {
 
     var url = "/api/admin/modules/section/" + sectionId;
     var setting = {
@@ -20,7 +20,7 @@ sabio.services.modules.getSectionModules = function (sectionId, onSuccess, onErr
 }
 
 //AJAX Call POST                
-sabio.services.modules.addModule = function (modulesData, onSuccess, onError)
+corbulo.services.modules.addModule = function (modulesData, onSuccess, onError)
 {
     var url = "/api/admin/modules";
 
@@ -37,7 +37,7 @@ sabio.services.modules.addModule = function (modulesData, onSuccess, onError)
 }
 
 //AJAX Call GET                 R
-sabio.services.modules.getModuleDetail = function (id, onSuccess, onError)
+corbulo.services.modules.getModuleDetail = function (id, onSuccess, onError)
 { 
     var url = "/api/Modules/" + id;
   
@@ -53,7 +53,7 @@ sabio.services.modules.getModuleDetail = function (id, onSuccess, onError)
 }
 
 //AJAX Call PUT                 U
-sabio.services.modules.updateModule = function (id, moduleData, onSuccess, onError)
+corbulo.services.modules.updateModule = function (id, moduleData, onSuccess, onError)
 {
     var url = "/admin/Modules/" + id;
 
@@ -70,7 +70,7 @@ sabio.services.modules.updateModule = function (id, moduleData, onSuccess, onErr
 }
 
 //AJAX Call Delete              D
-sabio.services.modules.deleteModule = function (id, onSuccess, onError) {
+corbulo.services.modules.deleteModule = function (id, onSuccess, onError) {
 
     var url = "/admin/Modules/" + id;
 
@@ -87,7 +87,7 @@ sabio.services.modules.deleteModule = function (id, onSuccess, onError) {
 }
 
 //AJAX Call Get List
-sabio.services.modules.getList = function (onSuccess, onError) {
+corbulo.services.modules.getList = function (onSuccess, onError) {
    
         var url = "/admin/modules";
         var setting = {
@@ -103,7 +103,7 @@ sabio.services.modules.getList = function (onSuccess, onError) {
 }
 
 //gets all the wiki pages     
-sabio.services.modules.getAllPages = function (onSuccess, onError) {
+corbulo.services.modules.getAllPages = function (onSuccess, onError) {
 
     var url = "/api/Wiki/pages";
     var settings = {
@@ -119,7 +119,7 @@ sabio.services.modules.getAllPages = function (onSuccess, onError) {
 
 }
 
-sabio.services.modules.getModuleTree = function (moduleId, onSuccess, onError) {
+corbulo.services.modules.getModuleTree = function (moduleId, onSuccess, onError) {
 
     var url = "/api/admin/modules/" + moduleId + "/tree";
     var settings = {
@@ -134,7 +134,7 @@ sabio.services.modules.getModuleTree = function (moduleId, onSuccess, onError) {
 }
 
 //add a wikipage to a module
-sabio.services.modules.addWikiPage = function (moduleId, wikipageId, onSuccess, onError) {
+corbulo.services.modules.addWikiPage = function (moduleId, wikipageId, onSuccess, onError) {
 
     var url = "/api/admin/modules/" + moduleId + "/page";
     var settings = {
@@ -150,7 +150,7 @@ sabio.services.modules.addWikiPage = function (moduleId, wikipageId, onSuccess, 
 }
 
 //delete a wikipage to a module
-sabio.services.modules.deleteWikiPage = function (id, wikipageId, onSuccess, onError) {
+corbulo.services.modules.deleteWikiPage = function (id, wikipageId, onSuccess, onError) {
 
     var url = "/admin/modules/" + id + "/wiki/" + wikipageId;
 
@@ -166,7 +166,7 @@ sabio.services.modules.deleteWikiPage = function (id, wikipageId, onSuccess, onE
 }
 
 //gets all the wiki pages associated with the module
-sabio.services.modules.getModuleWikis = function (id, onSuccess, onError) {
+corbulo.services.modules.getModuleWikis = function (id, onSuccess, onError) {
 
     var url = "/admin/Modules/wiki/" + id;
 
