@@ -1,4 +1,4 @@
-﻿@model Sabio.Web.Models.ViewModels.UserOnboardViewModel
+﻿@model Corbulo.Web.Models.ViewModels.UserOnboardViewModel
 
 @{
     ViewBag.Title = "UserOnboardIndex";
@@ -50,10 +50,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="desiredSabioStartDate">Desired Start Date<span class="text-danger">*</span></label>
+                <label class="col-md-4 control-label" for="desiredCorbuloStartDate">Desired Start Date<span class="text-danger">*</span></label>
                 <div class="col-md-6">
                     <div class="input-group">
-                        <input type="text" id="desiredSabioStartDate" name="desiredSabioStartDate" class="form-control input-datepicker" data-placeholder="Select a date" data-date-format="mm/dd/yyyy">
+                        <input type="text" id="desiredCorbuloStartDate" name="desiredCorbuloStartDate" class="form-control input-datepicker" data-placeholder="Select a date" data-date-format="mm/dd/yyyy">
                         <span class="input-group-addon"><i class="gi gi-calendar"></i></span>
                     </div>
                 </div>
@@ -431,86 +431,86 @@
 {
 
     <script type="text/javascript" src="~/Scripts/moment.js"></script>
-    <script type="text/javascript" src="~/Scripts/Sabio.Services.UserOnboard.js"></script>
-    <script type="text/javascript" src="~/Scripts/sabio.services.address.js"></script>
+    <script type="text/javascript" src="~/Scripts/Corbulo.Services.UserOnboard.js"></script>
+    <script type="text/javascript" src="~/Scripts/corbulo.services.address.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
-    <script type="text/javascript" src="~/Scripts/sabio.services.ethnicities.js"></script>
-    <script type="text/javascript" src="~/Scripts/Sabio.Services.Tracks.js"></script>
-    <script type="text/javascript" src="~/Scripts/sabio.services.sections.js"></script>
-    <script type="text/javascript" src="~/Scripts/Sabio.Services.CountryState.js"></script>
+    <script type="text/javascript" src="~/Scripts/corbulo.services.ethnicities.js"></script>
+    <script type="text/javascript" src="~/Scripts/Corbulo.Services.Tracks.js"></script>
+    <script type="text/javascript" src="~/Scripts/corbulo.services.sections.js"></script>
+    <script type="text/javascript" src="~/Scripts/Corbulo.Services.CountryState.js"></script>
     <script type="text/javascript">
 
-        sabio.page.startUp = function () {
-            $("#next").on('click', sabio.page.handlers.validateSubmitTab1);
-            $("#next1").on('click', sabio.page.handlers.validateSubmitTab2);
-            $("#next3").on('click', sabio.page.handlers.validateSubmitTab3);
-            $("#next4").on('click', sabio.page.handlers.validateSubmitTab4);
-            $("#next2").on('click', sabio.page.handlers.validateSubmitTab5);
-            $('#countryId').on("change", sabio.page.handlers.onSelectState);
+        corbulo.page.startUp = function () {
+            $("#next").on('click', corbulo.page.handlers.validateSubmitTab1);
+            $("#next1").on('click', corbulo.page.handlers.validateSubmitTab2);
+            $("#next3").on('click', corbulo.page.handlers.validateSubmitTab3);
+            $("#next4").on('click', corbulo.page.handlers.validateSubmitTab4);
+            $("#next2").on('click', corbulo.page.handlers.validateSubmitTab5);
+            $('#countryId').on("change", corbulo.page.handlers.onSelectState);
 
-            sabio.page.formsWizard.init();
-            sabio.services.ethnicities.getAll(sabio.page.ethnicitiesDropDown, sabio.page.ajaxError);
-            sabio.services.tracks.getTracks(sabio.page.tracksDropDown, sabio.page.ajaxError);
-            sabio.services.sections.getCampuses(sabio.page.campusDropDown, sabio.page.ajaxError);
-            sabio.services.CountryState.getCountries(sabio.page.countriesDropDown, sabio.page.ajaxError);
+            corbulo.page.formsWizard.init();
+            corbulo.services.ethnicities.getAll(corbulo.page.ethnicitiesDropDown, corbulo.page.ajaxError);
+            corbulo.services.tracks.getTracks(corbulo.page.tracksDropDown, corbulo.page.ajaxError);
+            corbulo.services.sections.getCampuses(corbulo.page.campusDropDown, corbulo.page.ajaxError);
+            corbulo.services.CountryState.getCountries(corbulo.page.countriesDropDown, corbulo.page.ajaxError);
         }
 
-        sabio.page.handlers.validateSubmitTab1 = function (evt) {
+        corbulo.page.handlers.validateSubmitTab1 = function (evt) {
             evt.preventDefault();
             if ($("#advanced-wizard").valid()) {
                 var myData = $("#advanced-wizard").serialize();
             }
             var id = $("#id").val();
             if (id > 0) {
-                sabio.services.userOnboard.update1(id, myData, sabio.page.ajaxSuccess, sabio.page.ajaxError);
+                corbulo.services.userOnboard.update1(id, myData, corbulo.page.ajaxSuccess, corbulo.page.ajaxError);
             }
         }
 
-        sabio.page.handlers.validateSubmitTab2 = function (evt) {
+        corbulo.page.handlers.validateSubmitTab2 = function (evt) {
             evt.preventDefault();
             if ($("#advanced-wizard").valid()) {
                 var myData = $("#advanced-wizard").serialize();
             }
             var id = $("#id").val();
             if (id > 0) {
-                sabio.services.userOnboard.update2(id, myData, sabio.page.ajaxSuccess, sabio.page.ajaxError);
+                corbulo.services.userOnboard.update2(id, myData, corbulo.page.ajaxSuccess, corbulo.page.ajaxError);
             }
         }
 
-        sabio.page.handlers.validateSubmitTab3 = function (evt) {
+        corbulo.page.handlers.validateSubmitTab3 = function (evt) {
             evt.preventDefault();
             if ($("#advanced-wizard").valid()) {
                 var myData = $("#advanced-wizard").serialize();
             }
             var id = $("#id").val();
             if (id > 0) {
-                sabio.services.userOnboard.update3(id, myData, sabio.page.ajaxSuccess, sabio.page.ajaxError);
+                corbulo.services.userOnboard.update3(id, myData, corbulo.page.ajaxSuccess, corbulo.page.ajaxError);
             }
         }
 
-        sabio.page.handlers.validateSubmitTab4 = function (evt) {
+        corbulo.page.handlers.validateSubmitTab4 = function (evt) {
             evt.preventDefault();
             if ($("#advanced-wizard").valid()) {
                 var myData = $("#advanced-wizard").serialize();
             }
             var id = $("#id").val();
             if (id > 0) {
-                sabio.services.userOnboard.update4(id, myData, sabio.page.ajaxSuccess, sabio.page.ajaxError);
+                corbulo.services.userOnboard.update4(id, myData, corbulo.page.ajaxSuccess, corbulo.page.ajaxError);
             }
         }
 
-        sabio.page.handlers.validateSubmitTab5 = function (evt) {
+        corbulo.page.handlers.validateSubmitTab5 = function (evt) {
             evt.preventDefault();
             if ($("#advanced-wizard").valid()) {
                 var myData = $("#advanced-wizard").serialize();
             }
             var id = $("#id").val();
             if (id > 0) {
-                sabio.services.userOnboard.update5(id, myData, sabio.page.ajaxSuccess, sabio.page.ajaxError);
+                corbulo.services.userOnboard.update5(id, myData, corbulo.page.ajaxSuccess, corbulo.page.ajaxError);
             }
         }
 
-        sabio.page.formsWizard = function () {
+        corbulo.page.formsWizard = function () {
             return {
                 init: function () {
                     /* Initialize Advanced Wizard with Validation */
@@ -605,7 +605,7 @@
                                 referredBy: {
                                     required: true
                                 },
-                                desiredSabioStartDate: {
+                                desiredCorbuloStartDate: {
                                     required: true
                                 },
                                 targetEmploymentLocation: {
@@ -687,7 +687,7 @@
                                 referredBy: {
                                     required: "This field is required"
                                 },
-                                desiredSabioStartDate: {
+                                desiredCorbuloStartDate: {
                                     required: "Please select a desired start date"
                                 },
                                 targetEmploymentLocation: {
@@ -702,35 +702,35 @@
             };
         }();
 
-        sabio.page.checkForId = function () {
+        corbulo.page.checkForId = function () {
             var id = $("#id").val();
             if (id > 0) {
-                sabio.page.getUser();
+                corbulo.page.getUser();
             }
         }
 
-        sabio.page.insertHiddenId = function (data) {
+        corbulo.page.insertHiddenId = function (data) {
             $("#id").val(data.item);
         }
 
-        sabio.page.ajaxSuccess = function (data) {
+        corbulo.page.ajaxSuccess = function (data) {
             if (data && data.item) {
                 $("#id").val(data.item);
             }
         };
 
-        sabio.page.ajaxError = function (jqXHR) {
+        corbulo.page.ajaxError = function (jqXHR) {
             console.log("Sorry User Delete")
         };
 
-        sabio.page.getUser = function () {
+        corbulo.page.getUser = function () {
             if ($("#id").val() != 0) {
                 var id = $("#id").val();
-                sabio.services.userOnboard.get(id, sabio.page.getAjaxSuccess, sabio.page.ajaxError);
+                corbulo.services.userOnboard.get(id, corbulo.page.getAjaxSuccess, corbulo.page.ajaxError);
             }
         }
 
-        sabio.page.getAjaxSuccess = function (data) {
+        corbulo.page.getAjaxSuccess = function (data) {
 
             console.log(data.item);
             $("#desiredTrack").val(data.item.desiredTrack);
@@ -738,14 +738,14 @@
             $("#desiredCampusLocation").val(data.item.desiredCampusLocation);
             $("#desiredCampusLocation").trigger('change');
 
-            //if (data.item.desiredSabioStartDate > new Date(1900, 01, 01, 01, 01, 01, 01)) {
-            if ($("#desiredSabioStartDate").val() === $("#desiredSabioStartDate").val('null')) {
-                //$("#desiredSabioStartDate").val(moment(data.item.desiredSabioStartDate).format('L'));
-                //$("#desiredSabioStartDate").removeClass('input-datepicker');
-                $("#desiredSabioStartDate").val("");
+            //if (data.item.desiredCorbuloStartDate > new Date(1900, 01, 01, 01, 01, 01, 01)) {
+            if ($("#desiredCorbuloStartDate").val() === $("#desiredCorbuloStartDate").val('null')) {
+                //$("#desiredCorbuloStartDate").val(moment(data.item.desiredCorbuloStartDate).format('L'));
+                //$("#desiredCorbuloStartDate").removeClass('input-datepicker');
+                $("#desiredCorbuloStartDate").val("");
             }
             else {
-                $("#desiredSabioStartDate").val(moment(data.item.desiredSabioStartDate).format('L'))
+                $("#desiredCorbuloStartDate").val(moment(data.item.desiredCorbuloStartDate).format('L'))
             };
 
             $("#accreditationId").val(data.item.accreditationId);
@@ -759,7 +759,7 @@
             $("#dateOfBirth").val(moment(data.item.dateOfBirth).format('L'));
             $("#phone").val(data.item.phone);
             $("#addressId").val(data.item.addressId);
-            sabio.page.stateProvinceId = data.item.stateProvinceId
+            corbulo.page.stateProvinceId = data.item.stateProvinceId
             $("#countryId").val(data.item.countryId);
             $("#countryId").trigger("change");
             $("#streetAddress1").val(data.item.streetAddress1);
@@ -781,7 +781,7 @@
             $("#targetEmploymentLocation").val(data.item.targetEmploymentLocation);
         };
 
-        sabio.page.ethnicitiesDropDown = function (data) {
+        corbulo.page.ethnicitiesDropDown = function (data) {
             for (var index = 0; index < data.items.length; index++) {
                 var html = '<option value="' + data.items[index].id + '">' + data.items[index].ethnicity + '</option>';
                 $('#ethnicityId').append(html);
@@ -789,37 +789,37 @@
             $("#ethnicityId").val(null);
         }
 
-        sabio.page.countriesDropDown = function (data) {
+        corbulo.page.countriesDropDown = function (data) {
             for (var index = 0; index < data.items.length; index++) {
                 var html = '<option value="' + data.items[index].id + '">' + data.items[index].name + '</option>';
                 $('#countryId').append(html);
             }
             $("#countryId").val(null);
-            sabio.page.checkForId();
+            corbulo.page.checkForId();
         }
 
-        sabio.page.handlers.onSelectState = function () {
+        corbulo.page.handlers.onSelectState = function () {
             var id = $("#countryId").find(":selected").val();
             $('#stateProvinceId').empty();
-            sabio.services.CountryState.getStateProvince(id, sabio.page.stateProvinceDropDown, sabio.page.ajaxError)
+            corbulo.services.CountryState.getStateProvince(id, corbulo.page.stateProvinceDropDown, corbulo.page.ajaxError)
         }
 
-        sabio.page.stateProvinceDropDown = function (data) {
+        corbulo.page.stateProvinceDropDown = function (data) {
             for (var index = 0; index < data.items.length; index++) {
                 var html = '<option value="' + data.items[index].stateProvinceId + '">' + data.items[index].name + '</option>';
                 $('#stateProvinceId').append(html);
             }
             $('#stateProvinceId').val(null).trigger('change');
 
-            if (sabio.page.stateProvinceId) {
+            if (corbulo.page.stateProvinceId) {
 
-                $("#stateProvinceId").val(sabio.page.stateProvinceId);
+                $("#stateProvinceId").val(corbulo.page.stateProvinceId);
                 $("#stateProvinceId").trigger("change");
-                sabio.page.stateProvinceId = null;
+                corbulo.page.stateProvinceId = null;
             }
         }
 
-        sabio.page.tracksDropDown = function (data) {
+        corbulo.page.tracksDropDown = function (data) {
             for (var index = 0; index < data.items.length; index++) {
                 var html = '<option value="' + data.items[index].id + '">' + data.items[index].name + '</option>';
                 $('#desiredTrack').append(html);
@@ -827,7 +827,7 @@
             $("#desiredTrack").val(null);
         }
 
-        sabio.page.campusDropDown = function (data) {
+        corbulo.page.campusDropDown = function (data) {
             for (var index = 0; index < data.items.length; index++) {
                 var html = '<option value="' + data.items[index].id + '">' + data.items[index].name + '</option>';
                 $('#desiredCampusLocation').append(html);
