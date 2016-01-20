@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Sabio.Web.Models.Requests.CoursesRequest
+namespace Corbulo.Web.Models.Requests.CoursesRequest
 {
     public class CourseUpdateRequest : AddRequest
     {
