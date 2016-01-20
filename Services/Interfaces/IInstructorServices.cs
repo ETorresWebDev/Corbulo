@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Sabio.Web.Domain;
-using Sabio.Web.Models.Requests.InstructorsRequest;
-using Sabio.Web.Models.Requests;
+using Corbulo.Web.Domain;
+using Corbulo.Web.Models.Requests.InstructorsRequest;
+using Corbulo.Web.Models.Requests;
 
-namespace Sabio.Web.Services.Interfaces
+namespace Corbulo.Web.Services.Interfaces
 {
     public interface IInstructorServices
     {
-        int InsertInstructor(Sabio.Web.Models.Requests.AddInstructorInfo model, string userId);
+        int InsertInstructor(Corbulo.Web.Models.Requests.AddInstructorInfo model, string userId);
 
         void Update(UpdateInstructorInfo model);
 
