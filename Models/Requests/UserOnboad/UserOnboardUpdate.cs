@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using Sabio.Web.Domain;
+using Corbulo.Web.Domain;
 
-namespace Sabio.Web.Models.Requests.UserOnboard
+namespace Corbulo.Web.Models.Requests.UserOnboard
 {
     public class UserOnboardUpdate1
     {
