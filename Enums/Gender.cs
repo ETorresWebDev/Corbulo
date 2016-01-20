@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Sabio.Web.Enums
+namespace Corbulo.Web.Enums
 {
     public enum Gender
     {
