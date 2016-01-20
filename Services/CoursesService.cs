@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-using Sabio.Web.Domain;
-using Sabio.Data;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Domain.Tests;
-using Sabio.Web.Models.Requests.CoursesRequest;
-using Sabio.Web.Services.Interfaces;
+using Corbulo.Web.Domain;
+using Corbulo.Data;
+using Corbulo.Web.Models.Requests;
+using Corbulo.Web.Domain.Tests;
+using Corbulo.Web.Models.Requests.CoursesRequest;
+using Corbulo.Web.Services.Interfaces;
 
-namespace Sabio.Web.Services
+namespace Corbulo.Web.Services
 {
     public class CoursesService : BaseService, ICoursesService
     {
