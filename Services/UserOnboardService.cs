@@ -7,11 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using Microsoft.Owin.Security.Provider;
-using Sabio.Data;
-using Sabio.Web.Domain;
-using Sabio.Web.Models.Requests.UserOnboard;
+using Corbulo.Data;
+using Corbulo.Web.Domain;
+using Corbulo.Web.Models.Requests.UserOnboard;
 
-namespace Sabio.Web.Services
+namespace Corbulo.Web.Services
 {
     public class UserOnboardService : BaseService
     {
@@ -70,7 +70,7 @@ namespace Sabio.Web.Services
             s.ReferredBy = reader.GetSafeString(startingIndex++);
             s.DesiredTrack = reader.GetSafeInt32(startingIndex++);
             s.DesiredCampusLocation = reader.GetSafeInt32(startingIndex++);
-            s.DesiredSabioStartDate = reader.GetSafeDateTimeNullable(startingIndex++);
+            s.DesiredCorbuloStartDate = reader.GetSafeDateTimeNullable(startingIndex++);
             s.TargetEmploymentLocation = reader.GetSafeString(startingIndex++);
             s.AccreditationId = reader.GetSafeInt32(startingIndex++);
             return s;
@@ -84,7 +84,7 @@ namespace Sabio.Web.Services
                u.AddWithValue("@Id", model.Id);
                u.AddWithValue("@DesiredTrack", model.DesiredTrack);
                u.AddWithValue("@DesiredCampusLocation", model.DesiredCampusLocation);
-               u.AddWithValue("@DesiredSabioStartDate", model.DesiredSabioStartDate);
+               u.AddWithValue("@DesiredCorbuloStartDate", model.DesiredCorbuloStartDate);
                u.AddWithValue("@AccreditationId", model.AccreditationId);
            });
         }
