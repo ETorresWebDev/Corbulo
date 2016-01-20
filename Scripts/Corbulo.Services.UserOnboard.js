@@ -1,10 +1,10 @@
-﻿if (!sabio.services.userOnboard) {
+﻿if (!corbulo.services.userOnboard) {
 
-    sabio.services.userOnboard = {};
+    corbulo.services.userOnboard = {};
 }
 
 // AJAX PUT
-sabio.services.userOnboard.update1 = function (id, myData, onSuccess, onError) {
+corbulo.services.userOnboard.update1 = function (id, myData, onSuccess, onError) {
 
     var url = "/api/user/onboard/tab1/" + id;
     var setting = {
@@ -19,7 +19,7 @@ sabio.services.userOnboard.update1 = function (id, myData, onSuccess, onError) {
     $.ajax(url, setting);
 };
 
-sabio.services.userOnboard.update2 = function (id, myData, onSuccess, onError) {
+corbulo.services.userOnboard.update2 = function (id, myData, onSuccess, onError) {
 
     var url = "/api/user/onboard/tab2/" + id;
     var setting = {
@@ -34,7 +34,7 @@ sabio.services.userOnboard.update2 = function (id, myData, onSuccess, onError) {
     $.ajax(url, setting);
 };
 
-sabio.services.userOnboard.update3 = function (id, myData, onSuccess, onError) {
+corbulo.services.userOnboard.update3 = function (id, myData, onSuccess, onError) {
 
     var url = "/api/user/onboard/tab3/" + id;
     var setting = {
@@ -49,7 +49,7 @@ sabio.services.userOnboard.update3 = function (id, myData, onSuccess, onError) {
     $.ajax(url, setting);
 };
 
-sabio.services.userOnboard.update4 = function (id, myData, onSuccess, onError) {
+corbulo.services.userOnboard.update4 = function (id, myData, onSuccess, onError) {
 
     var url = "/api/user/onboard/tab4/" + id;
     var setting = {
@@ -64,7 +64,7 @@ sabio.services.userOnboard.update4 = function (id, myData, onSuccess, onError) {
     $.ajax(url, setting);
 };
 
-sabio.services.userOnboard.update5 = function (id, myData, onSuccess, onError) {
+corbulo.services.userOnboard.update5 = function (id, myData, onSuccess, onError) {
 
     var url = "/api/user/onboard/tab5/" + id;
     var setting = {
@@ -81,7 +81,7 @@ sabio.services.userOnboard.update5 = function (id, myData, onSuccess, onError) {
 
 
 // AJAX GET
-sabio.services.userOnboard.get = function (id, onSuccess, onError) {
+corbulo.services.userOnboard.get = function (id, onSuccess, onError) {
 
     var url = "/api/user/onboard/" + id;
 
