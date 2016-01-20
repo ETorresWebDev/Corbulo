@@ -62,18 +62,18 @@
 
 @section scripts
 {
-<script type="text/javascript" src="~/Scripts/Sabio.Services.Modules.js"></script>
+<script type="text/javascript" src="~/Scripts/Corbulo.Services.Modules.js"></script>
     <script type="text/javascript">
 
-        sabio.page.startUp = function () {           
-            sabio.services.modules.getList(sabio.page.ajaxGetListSuccess, sabio.page.ajaxError);
-            $("#addNew").on('click', sabio.page.handlers.addNew);
+        corbulo.page.startUp = function () {           
+            corbulo.services.modules.getList(corbulo.page.ajaxGetListSuccess, corbulo.page.ajaxError);
+            $("#addNew").on('click', corbulo.page.handlers.addNew);
         }
-        sabio.page.handlers.addNew = function () {
+        corbulo.page.handlers.addNew = function () {
         window.open('http://lms.dev/modulesview/add');
         };
         
-        sabio.page.ajaxGetListSuccess = function (data) {
+        corbulo.page.ajaxGetListSuccess = function (data) {
             if (!data) {
 
                 return;
@@ -89,11 +89,11 @@
                 listData.description = data.items[i].description;
                 listData.id = data.items[i].id;
 
-                sabio.page.ajaxAddListData(listData);
+                corbulo.page.ajaxAddListData(listData);
             }
         }
 
-        sabio.page.ajaxAddListData = function (ModulesData) {
+        corbulo.page.ajaxAddListData = function (ModulesData) {
             var newModule = $($('#moduleListTemplate').html()).clone();
             var edit = "/modulesview/" + ModulesData.id + "/edit"
 
@@ -110,14 +110,14 @@
             targetLoc.append(newModule);
         }
 
-        sabio.page.ajaxError = function (jqXHR, textStatus, errorThrown) {
+        corbulo.page.ajaxError = function (jqXHR, textStatus, errorThrown) {
 
             $("#msgWindow").addClass("alert-danger");
             $("#msgWindow").removeClass("alert-info");
 
         }
 
-        sabio.page.getClone = function () {
+        corbulo.page.getClone = function () {
 
             return $($("#moduleListTemplate").html()).clone();
 
