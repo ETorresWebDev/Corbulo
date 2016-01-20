@@ -9,7 +9,7 @@
 @section pageInitScripts
 {
     <script type="text/javascript">
-        sabio.extraNgDependencies = ["checklist-model"]
+        corbulo.extraNgDependencies = ["checklist-model"]
     </script>
 }
 
@@ -18,7 +18,7 @@
     {
 
     <script src="~/Scripts/ng/checklist-model.js"></script>
-    <script src="~/Scripts/Sabio.Services.Modules.js"></script>
+    <script src="~/Scripts/Corbulo.Services.Modules.js"></script>
     <script src="~/Scripts/app/services/modulesService.js"></script>
 
     <script src="~/Scripts/app/admin/modules/controller/manage.js"></script>
@@ -30,7 +30,7 @@
 
 
 
-@*@model Sabio.Web.Models.ViewModels.ItemViewModel<int>
+@*@model corbulo.Web.Models.ViewModels.ItemViewModel<int>
     @{
         ViewBag.Title = "Index";
         Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -45,25 +45,25 @@
     </div>
 
     @section scripts{
-        <script src="~/Scripts/sabio.mod.services.Modules.js"></script>
+        <script src="~/Scripts/corbulo.mod.services.Modules.js"></script>
 
         <script type="text/javascript">
 
-            sabio.page.startUp = function () {
+            corbulo.page.startUp = function () {
 
-                sabio.page.moduleController = sabio.ng.getControllerInstance($("#moduleCtrler"));
+                corbulo.page.moduleController = corbulo.ng.getControllerInstance($("#moduleCtrler"));
             }
 
-            sabio.mod.services.modulesServiceFactory = function ($baseService) {
+            corbulo.mod.services.modulesServiceFactory = function ($baseService) {
 
-                var aSabioServiceObject = sabio.mod.services.modules;
+                var aCorbuloServiceObject = corbulo.mod.services.modules;
 
-                var newService = $baseService.merge(true, {}, aSabioServiceObject, $baseService);
+                var newService = $baseService.merge(true, {}, aCorbuloServiceObject, $baseService);
 
                 return newService;
             }
 
-            sabio.page.moduleControllerFactory = function (
+            corbulo.page.moduleControllerFactory = function (
                 $scope, $baseController, $moduleService) {
 
                 var vm = this;
@@ -98,16 +98,16 @@
 
             }
 
-            sabio.ng.addService(sabio.ng.app.module,
+            corbulo.ng.addService(corbulo.ng.app.module,
                 "$moduleService",
                 ["$baseService"],
-                sabio.mod.services.modulesServiceFactory
+                corbulo.mod.services.modulesServiceFactory
             );
 
-            sabio.ng.addController(sabio.ng.app.module,
+            corbulo.ng.addController(corbulo.ng.app.module,
                 "moduleController",
                 ['$scope', '$baseController', '$moduleService'],
-                sabio.page.moduleControllerFactory);
+                corbulo.page.moduleControllerFactory);
 
 
         </script>
