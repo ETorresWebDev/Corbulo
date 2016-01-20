@@ -1,9 +1,9 @@
-﻿if (!sabio.services.ethnicities) {
+﻿if (!corbulo.services.ethnicities) {
 
-    sabio.services.ethnicities = {};
+    corbulo.services.ethnicities = {};
 }
 
-sabio.services.ethnicities.getAll = function (onSuccess, onErrorr) {
+corbulo.services.ethnicities.getAll = function (onSuccess, onErrorr) {
     var url = "/api/user/ethnicities";
     var setting = {
         cache: false,
