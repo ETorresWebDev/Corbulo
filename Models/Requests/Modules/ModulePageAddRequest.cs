@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sabio.Web.Models.Requests
+namespace Corbulo.Web.Models.Requests
 {
     public class ModulePageAddRequest
     {                
